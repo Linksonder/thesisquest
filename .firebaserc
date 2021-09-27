@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "thesisquest": {
+      "hosting": {
+        "thesisquest": [
+          "thesisquest"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "thesisquest"
+  }
+}
