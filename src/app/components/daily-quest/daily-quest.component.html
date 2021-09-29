@@ -1,0 +1,38 @@
+<div *ngIf="quest$ | async as quest; else loadingBlock">
+
+    <div class="quest animate__animated" [ngClass]="{'new' : new}" *ngIf="quest.paper; else elseBlock">
+        <div class="points">
+            {{quest.points}} POINTS!
+        </div>
+    
+        <div class="banner">
+            <img src="assets/read.png">
+        </div>
+
+        <div >
+    
+            <h3 class="title" [ngClass]="{'complete' : quest.isComplete }">Read the paper "{{quest.paper.title}}"</h3>     
+            <div class="steps">
+                <span *ngIf="quest.isComplete">Quest <span class="success">complete</span>! Come back tomorrow!</span>
+                <span *ngIf="!quest.isComplete">{{getTimer(quest).hours}} hours and {{getTimer(quest).minutes}} minutes left!
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <ng-template #elseBlock>      
+        <div class="quest-slot">
+            <div>
+                <p>Daily quest available!</p>
+                <button (click)="openDaily()" class="btn btn-sm btn-outline-primary">Open daily quest</button>
+            </div>
+        </div>
+    </ng-template>
+
+</div>
+
+<ng-template #loadingBlock>
+    <p>Loading...</p>
+</ng-template>
+

@@ -1,0 +1,36 @@
+.complete{
+    border:1px solid white;
+    padding:5px;
+}
+
+p.question {
+    font-weight: bold;
+}
+
+textarea {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+p.steps {
+    font-style: italic;
+}
+
+p.descr {
+    font-size:80%;
+}
+
+.reward {
+    animation: rubberBand 1s 3 ease-in; /* referring directly to the animation's @keyframe declaration */
+}
+
+.points {
+    padding:3px;
+    border:1px solid gold;
+    border-radius: 4px;
+    display: block;
+    width:100px;
+    margin:auto;
+    margin-bottom:10px;
+
+}

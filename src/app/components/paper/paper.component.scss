@@ -1,0 +1,18 @@
+.paper {
+    display: inline-block;
+    box-sizing: border-box;
+    width:100%;
+    padding:4px;
+    border:1px solid lightgray;
+    border-radius: 4px;
+    height: 150px;
+    cursor: pointer;
+
+    .title {
+
+    }
+
+    .authors {
+        font-size:70%;      
+    }
+}

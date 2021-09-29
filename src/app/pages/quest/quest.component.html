@@ -1,0 +1,61 @@
+<div class="row" *ngIf="auth.user$ | async; else loadingBlock">
+    <div class="col-md-4">
+        <h4>Quest</h4>
+
+        <app-daily-quest (questChange)="updateQuest($event)"></app-daily-quest>
+
+        <br>
+
+        <h4>Paper</h4>
+
+        <app-paper [paper]="paper"></app-paper>
+    </div>
+    <div class="col-md-8">
+        <h4>Complete Quest</h4>
+
+        <div class="complete" *ngIf="quest.isComplete">
+            <p>You already completed this quest and earned {{quest.points}} points!</p>
+        </div>  
+
+        <div class="complete" *ngIf="!quest.isComplete">
+
+            <p class="descr">Answer the following questions to complete the quest.</p>
+
+            <div class="mb-3" *ngIf="question && question.complete">
+
+                <p class="question">You completed the quest!</p>
+
+                <span class="points reward">{{quest.points}} Points</span>
+                
+                <button (click)="claim()" class="btn btn-primary">Claim reward!</button>
+
+            </div>
+
+
+            <div class="mb-3" *ngIf="question && !question.complete">
+
+                <p class="steps">{{question.index}} Out of 4 Questions completed</p>
+
+                <p class="question">{{questions[question.key]}}</p>
+
+                <textarea [(ngModel)]="value"></textarea>
+
+                <button (click)="submit(value)" class="btn btn-primary">Submit</button>
+
+            </div>
+
+            <div class="mb-3" *ngIf="!question">
+                <p>Loading next question...</p>
+            </div>  
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<ng-template #loadingBlock>
+    Loading...
+</ng-template>

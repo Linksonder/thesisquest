@@ -1,7 +1,30 @@
-<h2>Welcome</h2>
 
-<ul>
-    <li>Step 1: Make account</li>
-    <li>Step 2: Add first papers</li>
-    <li>Step 3: Profit!</li>
-</ul>
+<h1>Welcome to Thesis Quest</h1>
+
+<p class="lead">A small app to help you read 1 paper every day. <br>
+    This is your new daily quest!</p>
+
+<div *ngIf="auth.user$ | async as user; else elseBlock">
+    
+    <div class="row">
+        <div class="p-3" [routerLink]="'/quest'">
+            <app-daily-quest [type]="'read'"></app-daily-quest>
+        </div>
+        <!-- <div class="col-sm p-3">
+            <app-daily-quest [type]="'add'"></app-daily-quest>
+        </div> -->
+    </div>
+
+</div>
+
+<ng-template #elseBlock>    
+
+    <h3>3 Steps</h3>
+
+    <p class="lead">
+        <a href="#"  [routerLink]="'/login'" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Get Started!</a>
+    </p>  
+</ng-template>
+
+
+

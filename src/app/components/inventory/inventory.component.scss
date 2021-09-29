@@ -1,0 +1,17 @@
+.inventory {
+    border:2px double white;
+    width:100%;
+    display: flex;
+    justify-content: space-around  ;
+    flex-direction: row;
+    align-items: space-between;
+    min-height: 200px;
+    flex-wrap: wrap; 
+
+}
+
+.paper-container {
+    width:50%;
+    padding:10px;
+}
+

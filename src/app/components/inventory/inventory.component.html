@@ -1,0 +1,13 @@
+<div class="inventory">
+
+
+    <div *ngIf="!papers || papers.length == 0">
+        <p>Add your first papers to your inventory by completing your first 'search' quest or importing papers from google scholar (Import papers).</p>
+    </div>
+
+    <div class="paper-container" *ngFor="let paper of papers" >
+        <app-paper [paper]='paper'></app-paper>
+        
+    </div>
+
+</div>

@@ -1,0 +1,19 @@
+<a (click)="show = !show" class="link" role="button">Import papers</a>
+
+<div *ngIf="show" class="import-dialog">
+
+    <h4>Import papers from google scholar</h4> 
+
+    <a href="https://scholar.google.com/scholar?scilib=1" target="_blank">Go to my google scholar library</a> 
+    <br>
+
+    <input type="file" class="btn btn-secondary" (change)="fileChangeListener($event)"> 
+
+    <p *ngIf="papers">Found {{papers.length}} new papers.</p>
+
+    <button [disabled]="!papers" (click)="import()" class="btn btn-secondary">Import</button>
+
+
+    <br>
+    <button class="btn btn-danger" (click)="show = false">Cancel</button>
+</div>

@@ -1,1 +1,16 @@
-<p>profile works!</p>
+<h2>Profile</h2>
+
+<p class="points">You already have {{points$ | async}} points!</p>
+
+<div *ngIf="auth.user; else elseBlock">
+    <h2>Inventory</h2>
+    <app-import></app-import>
+    
+    <app-inventory [papers]="papers">
+    
+    </app-inventory>
+</div>
+
+<ng-template #elseBlock>
+    <p>Loading profile...</p>
+</ng-template>
